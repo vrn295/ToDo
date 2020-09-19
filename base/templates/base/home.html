@@ -1,11 +1,23 @@
-<h1>ToDo</h1>
-<form action="/" method="POST">
-  {% csrf_token %} {{form.title}}
-  <input type="submit" name="Submit" />
-</form>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo</title>
+  </head>
+  <body>
+    <div>
+      <h1>ToDo</h1>
+      <form action="/" method="POST">
+        {% csrf_token %} {{form.title}}
+        <input type="submit" name="Submit" />
+      </form>
 
-{% for task in tasks %}
-<div>
-  <h2>{{task}}</h2>
-</div>
-{% endfor %}
+      {% for task in tasks %}
+      <div>
+        <h2>{{task}}</h2>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
