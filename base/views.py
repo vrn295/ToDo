@@ -4,6 +4,11 @@ from django.http import HttpResponse
 from .models import *
 from .forms import *
 
+from rest_framework import viewsets
+from rest_framework import permissions
+
+from .seralizers import BaseSerializer
+
 
 def index(request):
     tasks = Base.objects.all()
@@ -47,3 +52,12 @@ def delete(request, pk):
 
     context = {'item': item}
     return render(request, 'base/delete.html', context)
+
+
+'''Serializers'''
+
+
+class BaseViewSet(viewsets.ModelViewSet):
+    queryset = Base.objects.all().order_by('-date_created')
+    serializer_class = BaseSerializer
+    permission_classes = [permissions.IsAuthenticated]

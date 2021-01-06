@@ -4,13 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo</title>
+    <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-family: sans-serif;
+      }
+      input{
+        height: 30px;      
+      }
+    </style>
   </head>
   <body>
     <div>
       <h1>ToDo</h1>
       <form action="/" method="POST">
         {% csrf_token %} {{form.title}}
-        <input type="submit" name="Submit" />
+        <input id="submit" type="submit" name="Submit" />
       </form>
 
       {% for task in tasks %}
