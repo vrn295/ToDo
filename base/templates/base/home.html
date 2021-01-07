@@ -20,7 +20,7 @@
         align-items: center;
         overflow-y: auto;
         width: 1000px;
-        min-width: 200px;
+        min-width: 100px;
         /* min-width: 600px; */
         height: 600px;
         border-radius: 50px;
@@ -37,6 +37,12 @@
         color:white;
         font-size: 3rem;
       }
+
+      h2{
+          max-width: 250px;
+          overflow-wrap: break-word;
+        }
+
       #submit{
         background-color: #4CAF50; /* Green */
         width: 10rem;
@@ -66,7 +72,7 @@
       }
 
       #tasks-container{
-        text-align: center;
+        /* text-align: center; */
         padding-bottom: 50px;
         color: white;
       }
@@ -107,6 +113,38 @@
         justify-content: flex-end;
         opacity: 80%;
       }
+
+      @media only screen and (max-width: 768px) {
+        body{
+          margin: 0%;
+          overflow-x: hidden;
+        }
+
+        #todo-h1{
+          margin-top: 250px;
+        }
+
+        #container{
+          height: 100%;
+          width: 400px;
+          border-radius: 0px;
+          overflow-x: hidden;
+        }
+         #task{
+          width: 320px;
+        }
+
+        h2{
+          max-width: 150px;
+          overflow-wrap: break-word;
+        }
+
+        input{
+          width: 20rem;
+        }
+        
+      }
+
 
     </style>
   </head>
