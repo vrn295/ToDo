@@ -1,8 +1,77 @@
-<h3>Are You syre you want to delete {{item}}</h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete: {{item}}</title>
+</head>
 
-<form action="" method="POST">
-  {% csrf_token %}
-  <input type="submit" value="Delete" />
-</form>
+<style>
+  body{
+    margin: 0%;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    width: 1000px;
+    min-width: 200px;
+    /* min-width: 600px; */
+    height: 600px;
+    border-radius: 50px;
+    background-color: teal;
+        }
+        #todo-h1{
+        margin-top: 5rem;
+        color:white;
+        font-size: 2rem;
+      }
 
-<a href="{% url 'index' %}">Cancel</a>
+        #submit{
+        background-color: #4CAF50; /* Green */
+        width: 10rem;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        margin-top: 10px;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 30px;
+
+      }
+
+        a{
+        color: white;
+        text-decoration: none;
+        font-size: 1rem;
+        padding: 10px;
+      }
+  </style>
+
+<body>
+  <div id="container">
+  <h3 id="todo-h1">Are You sure you want to delete {{item}}</h3>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    <input id="submit" type="submit" value="Delete" />
+  </form>
+
+  <a href="{% url 'index' %}">Cancel</a>
+</div>
+</body>
+</html>
+
